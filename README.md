@@ -51,7 +51,7 @@ kmer_len: 8
     - name of the sample
     - path to FASTA assembly
     - index of the contig in the FASTA to be considered
-    - interval (<start>-<end>) on relative to the contig to be considered
+    - interval (< start >-< end >) on relative to the contig to be considered
     - length of the contig to be considered
     - name of the contig to be considered
 - `alignments`: defines which pairwise alignments to be computed. 
