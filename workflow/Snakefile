@@ -1,0 +1,60 @@
+
+configfile: "config/config.yaml"
+
+SYNCMER_TOOLKIT = config["syncmer_toolkit"]
+SCRIPTS = config["syncmer_scripts"]
+SYNG = config["syng"]
+RESULTS = config["results"]
+SAMPLE_SHEET = config["sample_sheet"]
+ALIGNMENTS = config["alignments"]
+KMER_LEN = config["kmer_len"]
+WINDOW_LEN = config["window_len"]
+
+SAMPLE_TO_FILENAME = {}
+SAMPLE_TO_LENGTH = {}
+SAMPLE_TO_INTERVAL = {}
+SAMPLE_TO_IDX = {}
+SAMPLE_TO_CONTIGNAME = {}
+
+OUTPUT_TSV = []
+OUTPUT_PAF = []
+
+with open(SAMPLE_SHEET, 'r') as sample_sheet:
+	for line in sample_sheet:
+		if line.startswith("#"):
+			continue
+		fields = line.strip().split()
+		if len(fields) != 6:
+			raise RuntimeError("Sample sheet file is malformatted.")
+		sample = fields[0]
+		assembly = fields[1]
+		assembly_idx = fields[2]
+		interval = fields[3]
+		contig_len = fields[4]
+		contig_name = fields[5]
+
+		SAMPLE_TO_FILENAME[sample] = assembly
+		SAMPLE_TO_LENGTH[sample] = contig_len
+		SAMPLE_TO_INTERVAL[sample] = assembly_idx + ":" + interval
+		SAMPLE_TO_IDX[sample] = assembly_idx
+		SAMPLE_TO_CONTIGNAME[sample] = contig_name
+
+		OUTPUT_TSV.append(RESULTS + "/syncmers/syncmers_" + sample + "_" + assembly_idx + ":" + interval + ".tsv" )
+
+
+for alignment in ALIGNMENTS:
+	samples = ALIGNMENTS[alignment]
+	if len(samples) != 2:
+		raise RuntimeError("Exactly two samples must be provided for alignment.")
+	if (samples[0] not in SAMPLE_TO_FILENAME) or (samples[1] not in SAMPLE_TO_FILENAME):
+		raise RuntimeError("alignment section lists samples not present in sample sheet.")
+	OUTPUT_PAF.append(RESULTS + "/paf/align_" + samples[0] + "_" + samples[1] + ".paf")
+
+
+include: "rules/create-paf.smk"
+
+rule all:
+	input:
+		OUTPUT_TSV,
+		OUTPUT_PAF
+
