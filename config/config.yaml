@@ -1,0 +1,34 @@
+# paths to executables
+syncmer_toolkit: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syncmer-toolkit/build/src/syncmer-toolkit"
+syncmer_scripts: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syncmer-toolkit/scripts"
+syng: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syng-main"
+
+# name of the output folder
+results: "results-assemblies-5003"
+
+# sample sheet. TSV files with format: <sample> <path/to/assembly.fasta> <contig index> <interval> <contig length>
+# sample: sample name
+# assembly: path to assembly FASTA file
+# contig index: index of the contig to be analyzed, i.e. enumerating all contigs in the FASTA file starting from 1, which one shall be considered
+# interval: <start>-<end> range of the genomic interval to be considered
+# contig length: total length of the contig
+sample_sheet: "sample-sheet.tsv"
+
+# define pairwise alignments to be produced
+alignments:
+     align1:
+        - HG01890-hap2
+        - chm13
+     align2:
+        - HG02554-hap1
+        - chm13
+     align3:
+        - HG00864-hap2
+        - chm13
+     align4:
+        - HG02011-hap1
+        - chm13
+
+# parameters for syng.
+window_len: 4995
+kmer_len: 8 
