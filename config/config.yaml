@@ -1,34 +1,30 @@
 # paths to executables
-syncmer_toolkit: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syncmer-toolkit/build/src/syncmer-toolkit"
-syncmer_scripts: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syncmer-toolkit/scripts"
-syng: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syng-main"
+syncmer_toolkit: "/path/to/syncmer-toolkit"
+syncmer_scripts: "/path/to/syncmer-toolkit/scripts"
+syng: "/path/to/syng-main"
 
 # name of the output folder
-results: "results-assemblies-5003"
+results: "results"
 
-# sample sheet. TSV files with format: <sample> <path/to/assembly.fasta> <contig index> <interval> <contig length>
+# sample sheet. TSV files with format: <sample> <path/to/assembly.fasta> <contig index> <interval> <contig length> <contig name>
 # sample: sample name
 # assembly: path to assembly FASTA file
 # contig index: index of the contig to be analyzed, i.e. enumerating all contigs in the FASTA file starting from 1, which one shall be considered
 # interval: <start>-<end> range of the genomic interval to be considered
 # contig length: total length of the contig
-sample_sheet: "sample-sheet.tsv"
+# contig name: name of the contig to be analyzed
+sample_sheet: "/path/to/sample-sheet.tsv"
 
 # define pairwise alignments to be produced
 alignments:
      align1:
-        - HG01890-hap2
-        - chm13
+        - sample1
+        - sample2
      align2:
-        - HG02554-hap1
-        - chm13
-     align3:
-        - HG00864-hap2
-        - chm13
-     align4:
-        - HG02011-hap1
-        - chm13
+        - sample2
+        - sample3
 
-# parameters for syng.
-window_len: 4995
+
+# parameters for syng, currently set to default parameters.
+window_len: 63
 kmer_len: 8 
