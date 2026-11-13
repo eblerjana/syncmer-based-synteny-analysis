@@ -4,7 +4,7 @@ syncmer_scripts: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syn
 syng: "/gpfs/project/projects/medbioinf/users/ebler/syncmers/code/syng-main"
 
 # name of the output folder
-results: "results-assemblies-5003"
+results: "results-assemblies-63"
 
 # sample sheet. TSV files with format: <sample> <path/to/assembly.fasta> <contig index> <interval> <contig length>
 # sample: sample name
@@ -28,7 +28,25 @@ alignments:
      align4:
         - HG02011-hap1
         - chm13
+     align5:
+        - HG01890-hap2
+        - HG02554-hap1
+     align6:
+        - HG01890-hap2
+        - HG00864-hap2
+     align7:
+        - HG01890-hap2
+        - HG02011-hap1
+     align8:
+        - HG02554-hap1
+        - HG00864-hap2
+     align9:
+        - HG02554-hap1
+        - HG02011-hap1
+     align10:
+        - HG00864-hap2
+        - HG02011-hap1
 
 # parameters for syng.
-window_len: 4995
+window_len: 55
 kmer_len: 8 
