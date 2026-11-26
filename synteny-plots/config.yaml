@@ -29,23 +29,102 @@ alignments:
         - HG02011-hap1
         - chm13
      align5:
-        - HG01890-hap2
-        - HG02554-hap1
+        - HG01890-hap1
+        - chm13
      align6:
-        - HG01890-hap2
-        - HG00864-hap2
+        - HG02554-hap2
+        - chm13
      align7:
+        - HG00864-hap1
+        - chm13
+     align8:
+        - HG02011-hap2
+        - chm13
+     align9:
+        - HG01890-hap2
+        - HG02554-hap1
+     align10:
+        - HG01890-hap2
+        - HG00864-hap2
+     align11:
         - HG01890-hap2
         - HG02011-hap1
-     align8:
+     align12:
         - HG02554-hap1
         - HG00864-hap2
-     align9:
+     align13:
         - HG02554-hap1
         - HG02011-hap1
-     align10:
+     align14:
         - HG00864-hap2
         - HG02011-hap1
+     align15:
+        - HG01890-hap1
+        - HG02554-hap2
+     align16:
+        - HG01890-hap1
+        - HG00864-hap1
+     align17:
+        - HG01890-hap1
+        - HG02011-hap2
+     align18:
+        - HG02554-hap2
+        - HG00864-hap1
+     align19:
+        - HG02554-hap2
+        - HG02011-hap2
+     align20:
+        - HG00864-hap1
+        - HG02011-hap2
+     align21:
+        - HG01890-hap2
+        - HG01890-hap1
+     align22:
+        - HG01890-hap2
+        - HG02554-hap2
+     align23:
+        - HG01890-hap2
+        - HG00864-hap1
+     align24:
+        - HG01890-hap2
+        - HG02011-hap2
+     align25:
+        - HG02554-hap1
+        - HG01890-hap1
+     align26:
+        - HG02554-hap1
+        - HG02554-hap2
+     align27:
+        - HG02554-hap1
+        - HG00864-hap1
+     align28:
+        - HG02554-hap1
+        - HG02011-hap2
+     align29:
+        - HG00864-hap2
+        - HG01890-hap1
+     align30:
+        - HG00864-hap2
+        - HG02554-hap2
+     align31:
+        - HG00864-hap2
+        - HG00864-hap1
+     align32:
+        - HG00864-hap2
+        - HG02011-hap2
+     align33:
+        - HG02011-hap1
+        - HG01890-hap1
+     align34:
+        - HG02011-hap1
+        - HG02554-hap2
+     align35:
+        - HG02011-hap1
+        - HG00864-hap1
+     align36:
+        - HG02011-hap1
+        - HG02011-hap2
+
 
 # parameters for syng.
 window_len: 55
